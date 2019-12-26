@@ -1,0 +1,94 @@
+dn: dc=satyam,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: satyam
+
+dn: ou=groups,dc=satyam,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=satyam,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=ssingh,ou=people,dc=satyam,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Satyam Singh
+sn: Singh
+uid: ssingh
+userPassword: password
+
+dn: uid=user1,ou=people,dc=satyam,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: user one
+sn: one
+uid: user1
+userPassword: password
+
+
+dn: uid=user2,ou=people,dc=satyam,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: user two
+sn: two
+uid: user2
+userPassword: password
+
+dn: uid=user3,ou=people,dc=satyam,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: User three
+sn: three
+uid: user3
+userPassword: password
+
+dn: uid=user4,ou=people,dc=satyam,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: user four
+sn: four
+uid: user4
+userPassword: password
+
+dn: uid=user5,ou=people,dc=satyam,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: user five
+sn: five
+uid: user5
+userPassword: password
+
+dn: cn=test_dev_1,ou=groups,dc=satyam,dc=com
+objectclass: top
+objectclass: groupOfNames
+cn: test_dev_1
+ou: development_group_1
+member: uid=ssingh,ou=people,dc=satyam,dc=com
+member: uid=user1,ou=people,dc=satyam,dc=com
+member: uid=user2,ou=people,dc=satyam,dc=com
+member: uid=user3,ou=people,dc=satyam,dc=com
+
+dn: cn=test_dev_2,ou=groups,dc=satyam,dc=com
+objectclass: top
+objectclass: groupOfNames
+cn: test_dev_2
+ou: development_group_2
+member: uid=user4,ou=people,dc=satyam,dc=com
+member: uid=user5,ou=people,dc=satyam,dc=com
