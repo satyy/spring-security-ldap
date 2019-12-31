@@ -6,7 +6,7 @@
 ## About Spring Security LDAP
 `LDAP` stands for `Lightweight Directory Access Protocol`. It is often used by organizations as a central repository for user information and as an authentication service. It can also be used to store the role information and can by used as an authorization service.
 
-LDAP authentication & authorization using `spring-security` involves following:
+USER authentication & authorization using `spring-security-ldap` involves following:
   1. Obtaining the unique LDAP “Distinguished Name”, or DN, from the login user-id. This involves performing a search in the directory.
      for e.g. `dn: uid=ssingh,ou=people,dc=satyam,dc=com`
   2. Authenticating the user, either by binding as that user or by performing a remote “compare” operation of the user's password against        the password attribute in the directory entry for the DN.
@@ -27,7 +27,7 @@ All the necessary configurations are externalized from the code and are part `ap
 2.  <b>ldap.authorization.group.name</b>      -   Group name user is supposed to be part of, to validate user is authorized or not.
 3.  <b>ldap.user.search.base</b>              -   User search base-directory relative to root directory(which was part of connection url). Using these information spring-security forms the absolute directory where user information is present in ldap server. For e.g, in this case if <i>ldap.user.search.base</i> has configured value <i>ou=people</i> then, the absolute path becomes <i>ou=people, dc=satyam, dc=com</i>
 4.  <b>ldap.user.search.filter</b>            -   Search filter applied on the distinguised name(dn) to search user inside ldap's user search base directory. For e.g, in the current application, this property is set to `uid={0}` which means value of `uid` in `dn` will be matched to the entered userId on the login page. By default, spring maps userId field in login page to {0} and password to {1}.
-5.  <b>ldap.user.search.passwordAttribute</b> - password attribute name in the `dn`. User entered password will be matched with this field in ldap user entry.
+5.  <b>ldap.user.search.passwordAttribute</b> -   password attribute name in the `dn`. User entered password will be matched with this field in ldap user entry.
 6.  <b>ldap.group.role.attribute</b>          -   attribute name which is mapped to group names in ldap server. Defualt value is `cn`
 7.  <b>ldap.group.role.prefix</b>             -   prefix for each group name which spring add before every group the user is part of. Default value is `Role_`
 8.  <b>ldap.group.role.filter</b>             -   Group filter, to identify if the user is part of the group or not. Default value is `member={0}` where, {0} is user id in the login page.
