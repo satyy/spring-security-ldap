@@ -25,7 +25,16 @@ All the necessary configurations are externalized from the code and are part `ap
 <pre>
 1. <b>ldap.connection.url</b>               -   Ldap server connection url, having the root directory(for e.g: dc=satyam, dc=com)
 2. <b>ldap.authorization.group.name</b>     -   Group name user is supposed to be part of, to validate user is authorized or not.
-3. <b>ldap.user.search.base</b>             -   User search base-directory relative to root directory(which was part of connection url).            Using these information spring-security forms the absolute directory where user information is present in ldap server. For              e.g, in this case if <i>ldap.user.search.base</i> has configured value <i>ou=people</i> then, the absolute path becomes                  <i>ou=people, dc=satyam, dc=com</i>
-
+3. <b>ldap.user.search.base</b>             -   User search base-directory relative to root directory(which was part of connection url). Using these information spring-security forms the absolute directory where user information is present in ldap server. For e.g, in this case if <i>ldap.user.search.base</i> has configured value <i>ou=people</i> then, the absolute path becomes <i>ou=people, dc=satyam, dc=com</i>
+4. <b>ldap.user.search.filter<b>            -   Search filter applied on the distinguised name(dn) to search user inside ldap's user search base directory. For e.g, in the current application, this property is set to `uid={0}` which means value of `uid` in `dn` will be matched to the entered userId on the login page. By default, spring maps userId field in login page to {0} and password to {1}.
+5. <b>ldap.user.search.passwordAttribute</b> - password attribute name in the `dn`. User entered password will be matched with this field in ldap user entry.
+6. <b>ldap.group.role.attribute</b>         -   attribute name which is mapped to group names in ldap server. Defualt value is `cn`
+7. <b>ldap.group.role.prefix</b>            -   prefix for each group name which spring add before every group the user is part of. Default value is `Role_`
+8. <b>ldap.group.role.filter</b>            -   Group filter, to identify if the user is part of the group or not. Default value is `member={0}` where, {0} is user id in the login page.
+9. <b>spring.ldap.embedded.ldif</b>         -   ldif file, containing entries to be loaded to in memory ldap server for this sample application. There is sample `test-server.ldif` file at resource which has data in ldif format and which creates dummy organisation hirarchy and add few user under it and also create two groups and assign user in that groups.
+10. <b>spring.ldap.embedded.base-dn</b>     -   root dn for the ldap server.
+11. <b>spring.ldap.embedded.port</b>        -   ldap server port
+12. <b>logging.level.root</b>               -   application log level
+13. <b>server.port</b>                      -   port on which application will run. Currently, its configured to port `8888`.
   
    
