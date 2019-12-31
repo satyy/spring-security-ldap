@@ -11,3 +11,6 @@ LDAP authentication & authorization using `spring-security` involves following:
      for e.g. `dn: uid=ssingh,ou=people,dc=satyam,dc=com`
   2. Authenticating the user, either by binding as that user or by performing a remote “compare” operation of the user's password against        the password attribute in the directory entry for the DN.
   3. Loading the list of authorities/groups for the authenticated user and validating if the user is authorized to access the resource if        the user is member of the desired group.
+ 
+## About Application
+Spring-Security intercept every request coming to the application and redirect it to spring-security default login page. Once, the user   provides credentials and try to login the user will be authenticated from ldap server and post successful authentication, user will be     able to access the resource if user is part of the group and authorized to access it.
