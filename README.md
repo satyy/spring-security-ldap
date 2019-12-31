@@ -15,7 +15,8 @@ LDAP authentication & authorization using `spring-security` involves following:
 ## About Application
 Spring-Security intercept every request coming to the application and redirect it to spring-security's default login page. Once, the user   provides credentials and try to login, the user's credential will be authenticated against ldap server and on successful authentication, user will be able to access the resource if user is part of the group and authorized to access it.
 
-- Instead of intercepting every request, spring-security support authenticating only request matching particular request or matching some     regex pattern. For e.g, to intercept any request with `\login` endpoint can be done by changing 
-          `.anyRequest().fullyAuthenticated() to .antMatchers("/login").fullyAuthenticated()`
-   in `configure()` funtion in configuration bean at `/src/main/java/com/satyy/ldap/config/WebSecurityConfig.java`
+- Instead of intercepting every request, spring-security support authenticating only request matching particular request or matching some     regex pattern.
+  For e.g, to intercept any request with `\login` endpoint can be done by changing 
+          `.anyRequest().fullyAuthenticated()` to `.antMatchers("/login").fullyAuthenticated()`
+   in `configure(final HttpSecurity http)` funtion in configuration bean at `/src/main/java/com/satyy/ldap/config/WebSecurityConfig.java`
    
