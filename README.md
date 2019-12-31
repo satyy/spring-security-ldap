@@ -32,9 +32,9 @@ All the necessary configurations are externalized from the code and are part `ap
 7.  <b>ldap.group.role.prefix</b>             -   prefix for each group name which spring add before every group the user is part of. Default value is `Role_`
 8.  <b>ldap.group.role.filter</b>             -   Group filter, to identify if the user is part of the group or not. Default value is `member={0}` where, {0} is user id in the login page.
 9.  <b>spring.ldap.embedded.ldif</b>          -   ldif file, containing entries to be loaded to in memory ldap server for this sample application. There is sample `test-server.ldif` file at resource which has data in ldif format and which creates dummy organisation hirarchy and add few user under it and also create two groups and assign user in that groups.
-10. <b>spring.ldap.embedded.base-dn</b>      -   root dn for the ldap server.
-11. <b>spring.ldap.embedded.port</b>         -   ldap server port
-12. <b>logging.level.root</b>                -   application log level
-13. <b>server.port</b>                       -   port on which application will run. Currently, its configured to port `8888`.
+10. <b>spring.ldap.embedded.base-dn</b>       -   root dn for the ldap server.
+11. <b>spring.ldap.embedded.port</b>          -   ldap server port
+12. <b>logging.level.root</b>                 -   application log level
+13. <b>server.port</b>                        -   port on which application will run. Currently, its configured to port `8888`.
   
    
