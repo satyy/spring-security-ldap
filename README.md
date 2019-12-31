@@ -1,5 +1,5 @@
 # spring-security-ldap
-- Implementation of Service for User Authentication and Authorization from LDAP.
+- Implementation of User Authentication and Authorization service from LDAP using spring-security.
 - User is Authorized by validating credential provivided by the user from the one present in LDAP server.
 - Once, user is authenticated, user will be validated if the user is authorized to access the resource by validating if the user is part of   group.
 
