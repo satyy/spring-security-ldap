@@ -57,4 +57,4 @@ The appication is configured to run on port **8888** which can be changed by mod
 ```
       which will redirect to the login page.
   2. The app will verify the credentials against the one configured in **test-server.ldif** file and on successful authentication, the app will check if the user is part of group **test_dev_1**.
-  3. Only, if the user is part of the group, the user will be able to access the resource. Otherwise, relavant error message will be shown at the ui.
+  3. Only, if the user is part of the group, the user will be able to access the resource. Otherwise, relavant error message will be shown at the <i>ui</i>.
