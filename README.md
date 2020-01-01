@@ -21,9 +21,9 @@ Spring-Security intercept every request coming to the application and redirect i
 
 - Instead of intercepting every request, spring-security support authenticating only request matching particular request or matching some regex pattern.
 ```
-  For e.g, to intercept any request with `\login` endpoint can be done by changing 
-          <b>.anyRequest().fullyAuthenticated()** to **.antMatchers("/login").fullyAuthenticated()<b>
-   in `configure(final HttpSecurity http)` funtion in configuration bean at `/src/main/java/com/satyy/ldap/config/WebSecurityConfig.java`
+  For e.g, to intercept any request with `\login` endpoint, modify 
+          ".anyRequest().fullyAuthenticated()" to ".antMatchers("/login").fullyAuthenticated()"
+   in "configure(final HttpSecurity http)" method in class "/src/main/java/com/satyy/ldap/config/WebSecurityConfig.java"
 ```  
 ### Configuration
 All the necessary configurations are externalized from the code and are part `application.properties`
