@@ -50,13 +50,12 @@ All the necessary configurations are externalized from the code and are part `ap
 The appication is configured to run on port **8888** which can be changed by modifying **server.port** in application.properties 
 
 ## Verify spring-security-ldap
-- Once, the application is up and running, 
-  1. Go to browser and hit the Get endpoint <i>/home</i> exposed by the application by making request 
+1. Go to browser and hit the Get endpoint <i>/home</i> exposed by the application by making request 
 ```
           http://127.0.0.1:8888/home
 ```
 
    which will redirect to the login page.
    
-   2. The app will verify the credentials against the one configured in **test-server.ldif** file and on successful authentication, the app will check if the user is part of group **test_dev_1**.
-   3. Only, if the user is part of the group, the user will be able to access the resource. Otherwise, relavant error message will be shown at the <i>ui</i>.
+2. The app will verify the credentials against the one configured in **test-server.ldif** file and on successful authentication, the app will check if the user is part of group **test_dev_1** which is configured as property **ldap.authorization.group.name** in **application.properties**.
+3. Only, if the user is part of the group, the user will be able to access the resource. Otherwise, relavant error message will be shown at the <i>login page</i>.
