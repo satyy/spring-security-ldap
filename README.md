@@ -51,7 +51,7 @@ The appication is configured to run on port **8888** which can be changed by mod
 
 ## Verify spring-security-ldap
 - Once, the application is up and running, 
-   1. Go to browser and hit the Get endpoint <i>/home</i> exposed by the application by making request 
+  1. Go to browser and hit the Get endpoint <i>/home</i> exposed by the application by making request 
 ```
           http://127.0.0.1:8888/home
 ```
