@@ -24,7 +24,7 @@ Spring-Security intercept every request coming to the application and redirect i
           **.anyRequest().fullyAuthenticated()** to **.antMatchers("/login").fullyAuthenticated()**
    in `configure(final HttpSecurity http)` funtion in configuration bean at `/src/main/java/com/satyy/ldap/config/WebSecurityConfig.java`
    
-## Configuration
+### Configuration
 All the necessary configurations are externalized from the code and are part `application.properties`
 <pre>
 1.  <b>ldap.connection.url</b>                -   Ldap server connection url, having the root directory(for e.g: dc=satyam, dc=com)
