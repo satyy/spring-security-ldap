@@ -19,7 +19,7 @@ USER authentication & authorization using `spring-security-ldap` involves follow
 ## About Application
 Spring-Security intercept every request coming to the application and redirect it to spring-security's default login page. Once, the user   provides credentials and try to login, the user's credential will be authenticated against ldap server and on successful authentication, user will be able to access the resource if user is part of the group and authorized to access it.
 
-- Instead of intercepting every request, spring-security support authenticating only request matching particular request or matching some     regex pattern.
+- Instead of intercepting every request, spring-security support authenticating only request matching particular request or matching some regex pattern.
   For e.g, to intercept any request with `\login` endpoint can be done by changing 
           **.anyRequest().fullyAuthenticated()** to **.antMatchers("/login").fullyAuthenticated()**
    in `configure(final HttpSecurity http)` funtion in configuration bean at `/src/main/java/com/satyy/ldap/config/WebSecurityConfig.java`
@@ -50,13 +50,13 @@ All the necessary configurations are externalized from the code and are part `ap
 The appication is configured to run on port **8888** which can be changed by modifying **server.port** in application.properties 
 
 ## Verify spring-security-ldap
-1. Go to browser and hit the Get endpoint <i>/home</i> exposed by the application by making request 
+1. Go to browser and hit the Get endpoint <i><b>/home</b></i> exposed by the application,
 ```
           http://127.0.0.1:8888/home
 ```
    which will redirect to the login page.
    
-2. The app will verify the credentials against the one configured in **test-server.ldif** file and on successful authentication, the app will check if the user is part of group **test_dev_1** which is configured as property **ldap.authorization.group.name** in application.properties.
+2. The app will verify the credentials against the one configured in **test-server.ldif** file and on successful authentication, the app will check if the user is part of group **test_dev_1** which is configured as property **ldap.authorization.group.name** in <i>application.properties</i>.
 3. Only, if the user is part of the group, the user will be able to access the resource. Otherwise, relavant error message will be shown at the <i>login page</i>.
 
 ## Implementation Class File
