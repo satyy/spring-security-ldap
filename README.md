@@ -27,7 +27,7 @@ Spring-Security intercept every request coming to the application and redirect i
 ### Configuration
 All the necessary configurations are externalized from the code and are part `application.properties`
 <pre>
-1.  <b>ldap.connection.url</b>                -   Ldap server connection url, having the root directory(for e.g: dc=satyam, dc=com)
+1.  <b>ldap.connection.url</b>                -   Ldap server connection url, include root directory(for e.g: dc=satyam, dc=com)
 2.  <b>ldap.authorization.group.name</b>      -   Group name user is supposed to be part of, to validate user is authorized or not.
 3.  <b>ldap.user.search.base</b>              -   User search base-directory relative to root directory(which was part of connection url). Using these information spring-security forms the absolute directory where user information is present in ldap server. For e.g, in this case if <i>ldap.user.search.base</i> has configured value <i>ou=people</i> then, the absolute path becomes <i>ou=people, dc=satyam, dc=com</i>
 4.  <b>ldap.user.search.filter</b>            -   Search filter applied on the distinguised name(dn) to search user inside ldap's user search base directory. For e.g, in the current application, this property is set to `uid={0}` which means value of `uid` in `dn` will be matched to the entered userId on the login page. By default, spring maps userId field in login page to {0} and password to {1}.
