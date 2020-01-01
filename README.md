@@ -1,7 +1,11 @@
 # spring-security-ldap
 - Implementation of User Authentication and Authorization service using `spring-security-ldap`.
 - User is Authorized by validating credential provivided by the user from the one present in LDAP server.
-- Once, user is authenticated, user will be validated if the user is authorized to access the resource by validating if the user is part of   group.
+- Once, user is authenticated, user will be validated if the user is authorized to access the resource by validating if the user is part of group.
+
+## Pre-requisite:
+1. Java
+2. Gradle
 
 ## About Spring Security LDAP
 `LDAP` stands for `Lightweight Directory Access Protocol`. It is often used by organizations as a central repository for user information and as an authentication service. It can also be used to store the role information and can by used as an authorization service.
