@@ -4,7 +4,7 @@
 - Once, user is authenticated, user will be validated if the user is authorized to access the resource by validating if the user is part of group.
 
 ## Pre-requisite:
-1. Java
+1. Java - 11
 2. Gradle
 
 ## About Spring Security LDAP
@@ -41,4 +41,19 @@ All the necessary configurations are externalized from the code and are part `ap
 12. <b>logging.level.root</b>                 -   application log level
 13. <b>server.port</b>                        -   port on which application will run. Currently, its configured to port `8888`.
   
-   
+## Build and Run
+1. Checkout repo.
+2. run cmd `sh run-app.sh`
+
+### Port Used 
+The appication is configured to run on port **8888** which can be changed by modifying **server.port** in application.properties 
+
+## Verify spring-security-ldap
+- Once, the application is up and running, 
+   1. Go to browser and hit the Get endpoint **/home** exposed by the application by making request 
+```
+          http://127.0.0.1:8888/home
+```
+      which will redirect to the login page.
+  2. The app will verify the credentials against the one configured in **test-server.ldif** file and on successful authentication, the app will check if the user is part of group **test_dev_1**.
+  3. Only, if the user is part of the group, the user will be able to access the resource. Otherwise, relavant error message will be shown at the ui.
