@@ -40,7 +40,8 @@ All the necessary configurations are externalized from the code and are part `ap
 11. <b>spring.ldap.embedded.port</b>          -   ldap server port
 12. <b>logging.level.root</b>                 -   application log level
 13. <b>server.port</b>                        -   port on which application will run. Currently, its configured to port `8888`.
-  
+</pre>  
+
 ## Build and Run
 1. Checkout repo.
 2. run cmd `sh run-app.sh`
